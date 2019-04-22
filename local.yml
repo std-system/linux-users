@@ -1,0 +1,14 @@
+---
+- hosts: "localhost"
+  connection: "local"
+  vars:
+    # Manage Linux users by importing their GitHub user
+    # and ssh key into the Linux system.
+    # https://galaxy.ansible.com/geerlingguy/github-users
+    github_users_authorized_keys_exclusive: true
+    github_users:
+    - name: "vincetse"
+      groups: "users"
+
+  roles:
+  - "geerlingguy.github-users"
